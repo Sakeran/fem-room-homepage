@@ -1,0 +1,39 @@
+---
+import NavLink from "./NavLink.astro";
+---
+
+<nav class="z-40 absolute inset-0 bg-white px-6">
+  <ul
+    id="primary-nav"
+    class="h-full text-xs font-semibold flex justify-end items-center space-x-8"
+  >
+    <NavLink>home</NavLink>
+    <NavLink>about</NavLink>
+    <NavLink>shop</NavLink>
+    <NavLink>contact</NavLink>
+  </ul>
+</nav>
+
+<style lang="scss">
+  nav {
+    transform: translateY(-100%);
+
+    transition: transform 150ms ease-in-out;
+
+    ul {
+      opacity: 0;
+      transform: translateX(100%);
+      transition: transform 150ms ease-in-out 200ms,
+        opacity 300ms ease-in-out 200ms;
+    }
+  }
+
+  nav.menu-visible {
+    transform: translateY(0%);
+
+    ul {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+</style>

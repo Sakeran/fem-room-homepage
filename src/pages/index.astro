@@ -1,4 +1,7 @@
 ---
+import Logo from "../components/Logo.astro";
+import Nav from "../components/Nav.astro";
+import NavToggle from "../components/NavToggle.astro";
 ---
 
 <html lang="en">
@@ -23,17 +26,12 @@
   </head>
 
   <body class="font-medium">
-    <header>
-      <div>room</div>
-      <button>Toggle Menu</button>
-      <nav>
-        <ul>
-          <li><a href="#">home</a></li>
-          <li><a href="#">shop</a></li>
-          <li><a href="#">about</a></li>
-          <li><a href="#">contact</a></li>
-        </ul>
-      </nav>
+    <header
+      class="bg-black/50 fixed top-0 left-0 right-0 min-h-[6.875rem] md:min-h-[8.875rem] flex items-center overflow-hidden"
+    >
+      <div><Logo /></div>
+      <NavToggle />
+      <Nav />
     </header>
 
     <main>
