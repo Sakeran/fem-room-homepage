@@ -18,22 +18,29 @@ import NavLink from "./NavLink.astro";
   nav {
     transform: translateY(-100%);
 
-    transition: transform 150ms ease-in-out;
-
     ul {
       opacity: 0;
       transform: translateX(100%);
-      transition: transform 150ms ease-in-out 150ms,
-        opacity 150ms ease-in-out 200ms;
+    }
+
+    &.menu-visible {
+      transform: translateY(0%);
+
+      ul {
+        opacity: 1;
+        transform: translateX(0);
+      }
     }
   }
 
-  nav.menu-visible {
-    transform: translateY(0%);
+  @media (prefers-reduced-motion: no-preference) {
+    nav {
+      transition: transform 150ms ease-in-out;
 
-    ul {
-      opacity: 1;
-      transform: translateX(0);
+      ul {
+        transition: transform 150ms ease-in-out 150ms,
+          opacity 150ms ease-in-out 200ms;
+      }
     }
   }
 </style>
