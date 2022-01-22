@@ -9,7 +9,7 @@
   const toggleButton = () => {
     toggle.setAttribute(
       "aria-expanded",
-      toggle.getAttribute("aria-expanded") ? "false" : "true"
+      toggle.getAttribute("aria-expanded") == "true" ? "false" : "true"
     );
   };
 

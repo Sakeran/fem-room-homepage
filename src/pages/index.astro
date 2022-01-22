@@ -27,10 +27,12 @@ import NavToggle from "../components/NavToggle.astro";
 
   <body class="font-medium">
     <header
-      class="bg-black/50 fixed top-0 left-0 right-0 min-h-[6.875rem] md:min-h-[8.875rem] flex items-center overflow-hidden"
+      class="fixed top-0 left-0 right-0 min-h-[6.875rem] md:min-h-[8.875rem] flex items-center overflow-hidden"
     >
-      <div><Logo /></div>
-      <NavToggle />
+      <div class="mx-auto"><Logo /></div>
+			<div class="z-40 absolute left-0">
+      	<NavToggle />
+			</div>
       <Nav />
     </header>
 
@@ -39,7 +41,7 @@ import NavToggle from "../components/NavToggle.astro";
 
       <div>
         <!-- Placeholder -->
-        <img src="images/desktop-image-hero-1.jpg" alt="" />
+        <img src="images/mobile-image-hero-1.jpg" alt="" />
       </div>
 
       <!-- Intro Section -->

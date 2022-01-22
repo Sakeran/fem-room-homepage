@@ -2,7 +2,7 @@
 import NavLink from "./NavLink.astro";
 ---
 
-<nav class="z-40 absolute inset-0 bg-white px-6">
+<nav class="z-30 absolute inset-0 bg-white px-6">
   <ul
     id="primary-nav"
     class="h-full text-xs font-semibold flex justify-end items-center space-x-8"
@@ -23,8 +23,8 @@ import NavLink from "./NavLink.astro";
     ul {
       opacity: 0;
       transform: translateX(100%);
-      transition: transform 150ms ease-in-out 200ms,
-        opacity 300ms ease-in-out 200ms;
+      transition: transform 150ms ease-in-out 150ms,
+        opacity 150ms ease-in-out 200ms;
     }
   }
 
