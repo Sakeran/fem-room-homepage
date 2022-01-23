@@ -7,3 +7,48 @@ const { href } = Astro.props;
 ---
 
 <li><a href={href || "#"}><slot /></a></li>
+
+<style lang="scss">
+  a {
+    position: relative;
+    display: inline-block;
+
+    &::after {
+      content: "";
+      position: absolute;
+
+      height: 0.125rem;
+      width: 1rem;
+
+      background-color: white;
+
+      top: calc(100% + 8px);
+      left: 50%;
+
+      transform: translateX(-50%) scalex(0);
+      transform-origin: center;
+
+      @media (prefers-reduced-motion: no-preference) {
+        transition: transform 75ms ease-in;
+      }
+    }
+
+    &:focus-visible {
+      --outline-color: hsla(0, 0%, 59%, 1);
+
+      @media (min-width: 40em) {
+        --outline-color: hsla(0, 0%, 100%, 0.5);
+      }
+
+      outline: 1px solid var(--outline-color, black);
+      outline-offset: 2px;
+    }
+
+    &:hover,
+    &:focus-visible { 
+      &::after {
+        transform: translateX(-50%) scaleX(1);
+      }
+    }
+  }
+</style>

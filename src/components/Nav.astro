@@ -2,10 +2,10 @@
 import NavLink from "./NavLink.astro";
 ---
 
-<nav class="z-30 absolute inset-0 bg-white px-6">
+<nav class="z-30 absolute inset-0 bg-white sm:bg-white/0 px-6 sm:static sm:px-14">
   <ul
     id="primary-nav"
-    class="h-full text-xs font-semibold flex justify-end items-center space-x-8"
+    class="h-full text-xs font-semibold flex justify-end items-center space-x-8 sm:justify-start sm:text-white"
   >
     <NavLink>home</NavLink>
     <NavLink>about</NavLink>
@@ -29,6 +29,15 @@ import NavLink from "./NavLink.astro";
       ul {
         opacity: 1;
         transform: translateX(0);
+      }
+    }
+
+    @media (min-width: 40em) {
+      transform: none;
+
+      ul {
+        opacity: 1;
+        transform: none;
       }
     }
   }
