@@ -1,0 +1,18 @@
+<div id="nav-scrim" data-visible="false"></div>
+
+<style lang="scss">
+  div {
+    z-index: 29;
+    position: fixed;
+    inset: 0;
+
+    transition: background-color 200ms ease-in-out 200ms;
+    background-color: hsla(0, 0%, 0%, 0);
+    pointer-events: none;
+
+    &[data-visible="true"] {
+      background-color: hsla(0, 0%, 0%, 0.5);
+      pointer-events: all;
+    }
+  }
+</style>

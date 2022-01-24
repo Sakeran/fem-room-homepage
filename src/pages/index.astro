@@ -2,6 +2,7 @@
 import Logo from "../components/Logo.astro";
 import Nav from "../components/Nav.astro";
 import NavToggle from "../components/NavToggle.astro";
+import NavScrim from "../components/NavScrim.astro";
 ---
 
 <html lang="en">
@@ -26,13 +27,14 @@ import NavToggle from "../components/NavToggle.astro";
   </head>
 
   <body class="font-medium">
+    <NavScrim />
     <header
-      class="fixed top-0 left-0 right-0 min-h-[6.875rem] md:min-h-[8.875rem] flex items-center overflow-hidden sm:px-16"
+      class="z-30 absolute top-0 left-0 right-0 min-h-[6.875rem] md:min-h-[8.875rem] flex items-center overflow-hidden sm:px-16"
     >
       <div class="mx-auto sm:mx-0"><Logo /></div>
-			<div class="z-40 absolute left-0 sm:hidden">
-      	<NavToggle />
-			</div>
+      <div class="z-40 absolute left-0 sm:hidden">
+        <NavToggle />
+      </div>
       <Nav />
     </header>
 
