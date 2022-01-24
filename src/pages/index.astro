@@ -3,6 +3,8 @@ import Logo from "../components/Logo.astro";
 import Nav from "../components/Nav.astro";
 import NavToggle from "../components/NavToggle.astro";
 import NavScrim from "../components/NavScrim.astro";
+
+import HeroSlides from "../components/Hero/HeroSlides.astro";
 ---
 
 <html lang="en">
@@ -38,26 +40,9 @@ import NavScrim from "../components/NavScrim.astro";
       <Nav />
     </header>
 
-    <main>
+    <main class="grid grid-cols-1">
       <!-- Hero/Slider Section -->
-
-      <div>
-        <!-- Placeholder -->
-        <img src="images/desktop-image-hero-1.jpg" alt="" />
-      </div>
-
-      <!-- Intro Section -->
-      <div>
-        <h1>Discover innovative ways to decorate</h1>
-        <p class="">
-          We provide unmatched quality, comfort, and style for property owners
-          across the country. Our experts combine form and function in bringing
-          your vision to life. Create a room in your own style with our
-          collection and make your property a reflection of you and what you
-          love.
-        </p>
-        <a href="#">Shop Now</a>
-      </div>
+      <HeroSlides />
 
       <!-- About Section -->
       <img src="/images/image-about-dark.jpg" alt="" />

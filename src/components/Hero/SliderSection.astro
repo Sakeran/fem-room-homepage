@@ -1,0 +1,58 @@
+---
+import HeroImage from "./HeroImage.astro";
+import HeroButtons from "./HeroButtons.astro";
+import ShopNowLink from "./ShopNowLink.astro";
+
+export interface Props {
+  id: number;
+  prevId: number;
+  nextId: number;
+  title: string;
+}
+
+const { id, prevId, nextId, title } = Astro.props;
+---
+
+<div id={`slider-section-${id}`} class="contents">
+  <div class="row-start-1 col-start-1 col-span-1">
+    <HeroImage {id} alt="Two chairs and a table with a small plant on top" />
+  </div>
+
+  <div class="row-start-1 col-start-1 col-span-1 place-self-end">
+    <HeroButtons {prevId} {nextId} />
+  </div>
+
+  <div
+    class="slider-content row-start-2 col-start-1 col-span-1 px-8 py-[4.5rem]"
+  >
+    <h1 class="font-semibold text-2.5xl tracking-title-sm leading-tight">
+      {title}
+    </h1>
+    <p class="pt-[0.875rem] pb-[3.25rem] text-gray-600 text-xs leading-relaxed">
+      <slot />
+    </p>
+    <ShopNowLink />
+  </div>
+</div>
+
+<style lang="scss">
+  #slider-section-1 > * {
+    z-index: 5;
+  }
+
+  #slider-section-2 > * {
+    z-index: 4;
+  }
+
+  #slider-section-3 > * {
+    z-index: 3;
+  }
+
+  [id^="slider-section-"]:target > * {
+    z-index: 6 !important;
+  }
+
+  .slider-content {
+    background-color: white;
+  }
+</style>

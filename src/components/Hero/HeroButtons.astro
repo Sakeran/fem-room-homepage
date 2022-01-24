@@ -1,0 +1,34 @@
+---
+export interface Props {
+  prevId: number;
+  nextId: number;
+}
+
+const { prevId, nextId } = Astro.props;
+
+const btnClass =
+  "w-14 aspect-square bg-black grid place-items-center hover:bg-gray-300 focus-visible:bg-gray-300 focus-visible:outline-none transition-colors duration-150 ease-in-out";
+---
+
+<div class="flex">
+  <a class={btnClass} href={`#slider-section-${prevId}`}
+    ><span class="sr-only">View Previous Slide</span><svg
+      width="14"
+      height="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M13 0L1 12l12 12" stroke="#FFF" fill="none" fill-rule="evenodd"
+      ></path></svg
+    ></a
+  >
+  <a class={btnClass} href={`#slider-section-${nextId}`}
+    ><span class="sr-only">View Next Slide</span><svg
+      width="14"
+      height="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M1 0l12 12L1 24" stroke="#FFF" fill="none" fill-rule="evenodd"
+      ></path></svg
+    ></a
+  >
+</div>
