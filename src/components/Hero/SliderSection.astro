@@ -8,9 +8,10 @@ export interface Props {
   prevId: number;
   nextId: number;
   title: string;
+  isH1?: boolean;
 }
 
-const { id, prevId, nextId, title } = Astro.props;
+const { id, prevId, nextId, title, isH1 } = Astro.props;
 ---
 
 <div id={`slider-section-${id}`} class="contents">
@@ -25,9 +26,16 @@ const { id, prevId, nextId, title } = Astro.props;
   <div
     class="slider-content row-start-2 col-start-1 col-span-1 px-8 py-[4.5rem]"
   >
-    <h1 class="font-semibold text-2.5xl tracking-title-sm leading-tight">
-      {title}
-    </h1>
+    {isH1 ? (
+      <h1 class="font-semibold text-2.5xl tracking-title-sm leading-tight">
+        {title}
+      </h1>
+    ) : (
+      <h2 class="font-semibold text-2.5xl tracking-title-sm leading-tight">
+        {title}
+      </h2>
+    )}
+
     <p class="pt-[0.875rem] pb-[3.25rem] text-gray-600 text-xs leading-relaxed">
       <slot />
     </p>
