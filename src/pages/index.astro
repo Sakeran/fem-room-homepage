@@ -40,16 +40,16 @@ import HeroSlides from "../components/Hero/HeroSlides.astro";
       <Nav />
     </header>
 
-    <main class="grid grid-cols-1">
+    <main class="grid grid-cols-1 lg:grid-cols-[1fr,1fr,10rem,1fr] lg:grid-rows-[1fr,5rem,1fr]">
       <!-- Hero/Slider Section -->
       <HeroSlides />
 
       <!-- About Section -->
-      <div>
-        <img class="w-full h-full object-cover" src="/images/image-about-dark.jpg" alt="" />
+      <div class="lg:col-start-1 lg:row-start-3">
+        <img class="w-full object-cover" src="/images/image-about-dark.jpg" alt="" />
       </div>
-      <div class="py-14 px-8 sm:text-center">
-        <h2 class="uppercase font-bold text-xs tracking-5 leading-[1.375]">About Our Furniture</h2>
+      <div class="py-14 px-8 sm:text-center lg:text-left lg:row-start-3 lg:col-span-2 lg:py-[4.25rem] lg:px-12">
+        <h2 class="uppercase font-bold text-xs tracking-5 leading-[1.83]">About Our Furniture</h2>
         <p class="text-xs text-gray-600 pt-2 tracking-body leading-[1.66] sm:max-w-prose sm:mx-auto">
           Our multifunctional collection blends design and function to suit your
           individual taste. Make each room unique, or pick a cohesive theme that
@@ -59,8 +59,8 @@ import HeroSlides from "../components/Hero/HeroSlides.astro";
           dream space.
         </p>
       </div>
-      <div>
-        <img class="w-full h-full object-cover" src="/images/image-about-light.jpg" alt="" />
+      <div class="lg:col-start-4 lg:row-start-3">
+        <img class="w-full object-cover" src="/images/image-about-light.jpg" alt="" />
       </div>
     </main>
   </body>

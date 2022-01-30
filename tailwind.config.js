@@ -14,7 +14,7 @@ module.exports = {
 
     letterSpacing: {
       "title-sm": "-1.17px",
-      "title-lg": "-1.67px",
+      "title-lg": "-1.91px",
       nav: "-0.5px",
       body: "-0.25px",
       5: "5px",

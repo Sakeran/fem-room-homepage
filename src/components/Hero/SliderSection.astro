@@ -15,28 +15,28 @@ const { id, prevId, nextId, title, isH1 } = Astro.props;
 ---
 
 <div id={`slider-section-${id}`} class="contents">
-  <div class="row-start-1 col-start-1 col-span-1">
+  <div class="row-start-1 col-start-1 lg:col-end-3 lg:row-end-3">
     <HeroImage {id} alt="Two chairs and a table with a small plant on top" />
   </div>
 
-  <div class="row-start-1 col-start-1 col-span-1 place-self-end">
+  <div class="row-start-1 col-start-1 col-span-1 place-self-end lg:col-start-3 lg:row-start-2">
     <HeroButtons {prevId} {nextId} />
   </div>
 
   <div
-    class="slider-content row-start-2 col-start-1 col-span-1 px-8 py-[4.5rem] sm:text-center"
+    class="slider-content row-start-2 col-start-1 col-span-1 px-8 py-[4.5rem] sm:text-center lg:text-left lg:col-start-3 lg:col-span-2 lg:row-start-1 lg:pt-[7.5rem] lg:pb-[4.5rem] lg:px-[6.25rem]"
   >
     {isH1 ? (
-      <h1 class="font-semibold text-2.5xl tracking-title-sm leading-tight sm:text-4.5xl">
+      <h1 class="font-semibold text-2.5xl tracking-title-sm leading-tight sm:text-4.5xl lg:tracking-title-lg">
         {title}
       </h1>
     ) : (
-      <h2 class="font-semibold text-2.5xl tracking-title-sm leading-tight sm:text-4.5xl">
+      <h2 class="font-semibold text-2.5xl tracking-title-sm leading-tight sm:text-4.5xl lg:tracking-title-lg">
         {title}
       </h2>
     )}
 
-    <p class="pt-[0.875rem] pb-[3.25rem] text-gray-600 text-xs leading-relaxed max-w-prose sm:mx-auto sm:pt-6 sm:pb-8">
+    <p class="pt-[0.875rem] pb-[3.25rem] text-gray-600 text-xs leading-relaxed max-w-prose sm:mx-auto sm:pt-6 sm:pb-8 lg:m-0">
       <slot />
     </p>
     <ShopNowLink />
