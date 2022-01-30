@@ -2,9 +2,7 @@
 import NavLink from "./NavLink.astro";
 ---
 
-<nav
-  class="z-30 absolute inset-0 bg-white sm:bg-white/0 px-6 sm:static sm:px-14"
->
+<nav>
   <ul
     id="primary-nav"
     class="h-full text-xs font-semibold flex justify-end items-center space-x-8 sm:justify-start sm:text-white"
@@ -18,6 +16,8 @@ import NavLink from "./NavLink.astro";
 
 <style lang="scss">
   nav {
+    @apply bg-white sm:bg-white/0 z-30 absolute inset-0 px-6 sm:static sm:px-14;
+
     transform: translateY(-100%);
 
     ul {
@@ -25,18 +25,21 @@ import NavLink from "./NavLink.astro";
       transform: translateX(100%);
     }
 
-    .scrim {
-      position: abolute;
-      inset: 0;
-      background-color: red;
-    }
-
-    &.menu-visible {
+    &.menu-visible,
+    :global(.no-js) & {
       transform: translateY(0%);
 
       ul {
         opacity: 1;
         transform: translateX(0);
+      }
+    }
+
+    :global(.no-js) & {
+      @apply bg-white/0 text-white top-20;
+
+      ul {
+        @apply justify-center flex-wrap;
       }
     }
 
