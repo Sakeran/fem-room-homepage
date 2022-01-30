@@ -29,6 +29,9 @@ import HeroSlides from "../components/Hero/HeroSlides.astro";
   </head>
 
   <body class="font-medium">
+
+    <a href="#main-content" class="absolute z-50 bg-white px-8 py-4 uppercase tracking-5 font-bold text-xs -translate-y-full focus:-translate-y-0 transition-transform duration-150 ease-in-out">Skip to content</a>
+
     <NavScrim />
     <header
       class="z-30 absolute top-0 left-0 right-0 min-h-[6.875rem] md:min-h-[8.875rem] flex items-center overflow-hidden sm:px-16"
@@ -40,7 +43,7 @@ import HeroSlides from "../components/Hero/HeroSlides.astro";
       <Nav />
     </header>
 
-    <main class="grid grid-cols-1 lg:grid-cols-[1fr,1fr,10rem,1fr] lg:grid-rows-[1fr,5rem,1fr]">
+    <main id="main-content" class="grid grid-cols-1 lg:grid-cols-[1fr,1fr,10rem,1fr] lg:grid-rows-[1fr,5rem,1fr]">
       <!-- Hero/Slider Section -->
       <HeroSlides />
 
