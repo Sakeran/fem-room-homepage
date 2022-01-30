@@ -24,19 +24,19 @@ const { id, prevId, nextId, title, isH1 } = Astro.props;
   </div>
 
   <div
-    class="slider-content row-start-2 col-start-1 col-span-1 px-8 py-[4.5rem]"
+    class="slider-content row-start-2 col-start-1 col-span-1 px-8 py-[4.5rem] sm:text-center"
   >
     {isH1 ? (
-      <h1 class="font-semibold text-2.5xl tracking-title-sm leading-tight">
+      <h1 class="font-semibold text-2.5xl tracking-title-sm leading-tight sm:text-4.5xl">
         {title}
       </h1>
     ) : (
-      <h2 class="font-semibold text-2.5xl tracking-title-sm leading-tight">
+      <h2 class="font-semibold text-2.5xl tracking-title-sm leading-tight sm:text-4.5xl">
         {title}
       </h2>
     )}
 
-    <p class="pt-[0.875rem] pb-[3.25rem] text-gray-600 text-xs leading-relaxed">
+    <p class="pt-[0.875rem] pb-[3.25rem] text-gray-600 text-xs leading-relaxed max-w-prose sm:mx-auto sm:pt-6 sm:pb-8">
       <slot />
     </p>
     <ShopNowLink />
