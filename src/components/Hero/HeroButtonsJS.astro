@@ -1,17 +1,10 @@
 ---
-export interface Props {
-  prevId: number;
-  nextId: number;
-}
-
-const { prevId, nextId } = Astro.props;
-
 const btnClass =
   "w-14 lg:w-20 aspect-square bg-black grid place-items-center hover:bg-gray-300 focus-visible:bg-gray-300 focus-visible:outline-none transition-colors duration-150 ease-in-out";
 ---
 
-<div class="no-js-only flex">
-  <a class={btnClass} href={`#slider-section-${prevId}`}
+<div class="js-only flex">
+  <button id="hero-previous-slide" class={btnClass}
     ><span class="sr-only">View Previous Slide</span><svg
       width="14"
       height="24"
@@ -19,9 +12,9 @@ const btnClass =
     >
       <path d="M13 0L1 12l12 12" stroke="#FFF" fill="none" fill-rule="evenodd"
       ></path></svg
-    ></a
+    ></button
   >
-  <a class={btnClass} href={`#slider-section-${nextId}`}
+  <button id="hero-next-slide" class={btnClass}
     ><span class="sr-only">View Next Slide</span><svg
       width="14"
       height="24"
@@ -29,6 +22,6 @@ const btnClass =
     >
       <path d="M1 0l12 12L1 24" stroke="#FFF" fill="none" fill-rule="evenodd"
       ></path></svg
-    ></a
+    ></button
   >
 </div>

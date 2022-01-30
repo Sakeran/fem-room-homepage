@@ -7,7 +7,7 @@ export interface Props {
 const { id, alt } = Astro.props;
 ---
 
-<picture>
+<picture class="hero-image">
   <source media="(min-width: 40em)" srcset={`/images/desktop-image-hero-${id}.jpg`}
   />
   <img class="w-full h-full object-fit" src={`/images/mobile-image-hero-${id}.jpg`} {alt} />
