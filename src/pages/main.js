@@ -41,7 +41,7 @@
 
   const animationAllowed = window.matchMedia(
     "(prefers-reduced-motion: no-preference)"
-  );
+  ).matches;
 
   const fadeInCurrent = () => {
     const last = visibleContent;
@@ -55,7 +55,7 @@
     visibleContent.style.transition = "none";
     visibleContent.style.zIndex = 10;
     visibleContent.style.opacity = 0;
-    
+
     requestAnimationFrame(() => {
       setTimeout(() => {
         visibleContent.style.transition = "opacity 150ms ease-in-out";
@@ -63,14 +63,14 @@
       }, 1);
     });
   };
-  
+
   const slideInCurrent = (fromLeft = false) => {
     visibleSlide = document.querySelector(
       `[data-slider-idx="${currentIndex}"]`
-      );
-      visibleSlide.style.zIndex = visibleZ++;
-      
-      if (!animationAllowed) {
+    );
+    visibleSlide.style.zIndex = visibleZ++;
+
+    if (!animationAllowed) {
       visibleSlide.style.transform = `translateX(${0})`;
       return;
     }
